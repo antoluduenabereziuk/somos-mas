@@ -15,7 +15,6 @@ header {
   figure {
     img {
       width: 11rem;
-      // height: 11rem;
     }
   }
 
@@ -26,20 +25,18 @@ header {
       align-items: center;
       list-style: none;
 
-      li {
-        margin-right: $margin-lg;
+      & > * {
+        margin-right: 4rem;
         cursor: pointer;
+        color: $color-ligthblue;
+        font-weight: 500;
+        text-decoration: none;
+        text-transform: capitalize;
+      }
 
-        a {
-          color: $color-ligthblue;
-          font-weight: 500;
-          text-decoration: none;
-          text-transform: capitalize;
-
-          &:hover {
-            text-decoration: underline;
-          }
-        }
+      & > *:hover {
+        text-decoration: underline;
+        color: $color-ligthblue;
       }
     }
   }

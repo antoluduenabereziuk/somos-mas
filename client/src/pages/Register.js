@@ -1,5 +1,5 @@
 import React from "react";
 
-export function Home() {
+export const Register = () => {
   return <div></div>;
-}
+};

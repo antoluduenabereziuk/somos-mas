@@ -2,7 +2,7 @@ import logoONG from "../../assets/images/logo.png";
 
 import "./Footer.scss";
 
-function Footer() {
+export const Footer = () => {
   return (
     <footer>
       <section className="footer-nav">
@@ -43,6 +43,4 @@ function Footer() {
       </div>
     </footer>
   );
-}
-
-export { Footer };
+};

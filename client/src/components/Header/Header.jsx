@@ -3,15 +3,14 @@ import { Link } from "react-router-dom";
 
 import "./Header.scss";
 
-function Header() {
+export const Header = () => {
   const itemsNav = [
-    "Inicio",
-    "Nosotros",
-    "Actividades",
-    "Novedades",
-    "Testimonios",
-    "Contacto",
-    "Contribuye",
+    { title: "Inicio", route: "" },
+    { title: "Nosotros", route: "us" },
+    { title: "Novedades", route: "novelties" },
+    { title: "Testimonios", route: "testimonies" },
+    { title: "contacto", route: "contact" },
+    { title: "Contribuye", route: "contribute" },
   ];
 
   return (
@@ -23,8 +22,8 @@ function Header() {
       <nav>
         <ul>
           {itemsNav.map((item, index) => (
-            <Link key={index} to="/">
-              {item}
+            <Link key={index} to={`/${item.route}`}>
+              {item.title}
             </Link>
           ))}
         </ul>
@@ -36,6 +35,4 @@ function Header() {
       </div>
     </header>
   );
-}
-
-export { Header };
+};
