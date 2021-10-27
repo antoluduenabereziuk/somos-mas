@@ -2,6 +2,8 @@ import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
+import logo from '../../assets/images/logo.png';
+
 export const Login = () => {
 
     const validationSchema = Yup.object({
@@ -25,10 +27,10 @@ export const Login = () => {
     }
 
     return (
-        <div className="container text-center">
-            <h1 className="mt-2">Formulario de Login</h1>
+        <div className="container text-center p-3">
+            <img src={logo} alt="Somos Mas Logo"/>
             <div className="row">
-                <div className="mx-3 col-lg-12 col-md-12 col-xs-12">
+                <div className="mx-auto col-lg-12 col-md-12 col-xs-12">
                     <Formik 
                     initialValues={initialValues}
                     validationSchema={validationSchema}
@@ -62,9 +64,11 @@ export const Login = () => {
                                     </ErrorMessage>
                                 </label>
                             </div>
-                            <div className="form-group mb-3">
+                            <a href="/">¿Olvidáste tu contraseña?</a>
+                            <div className="form-group my-3">
                                 <button type="submit" className="btn btn-primary">Login</button>
                             </div>
+                            <span>¿Aún no tienes una cuenta? <a href="/">Register</a></span>
                         </Form>
                     </Formik>
                 </div>
