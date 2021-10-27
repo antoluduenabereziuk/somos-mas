@@ -24,58 +24,52 @@ const Login = () => {
   };
 
   return (
-    <div className="container text-center">
+    <div className="form-container">
       <h1 className="mt-2">Formulario de Login</h1>
-      <div className="row">
-        <div className="mx-3 col-lg-12 col-md-12 col-xs-12">
-          <Formik
-            initialValues={initialValues}
-            validationSchema={validationSchema}
-            onSubmit={handleSubmit}
-          >
-            <Form className="mt-3 col-12">
-              <div className="form-group mb-3">
-                <label htmlFor="email">
-                  Email:
-                  <Field
-                    type="email"
-                    className="form-control"
-                    name="email"
-                    id="email"
-                    required
-                  />
-                  <ErrorMessage name="email">
-                    {(error) => (
-                      <div className="alert alert-danger">{error}</div>
-                    )}
-                  </ErrorMessage>
-                </label>
-              </div>
-              <div className="form-group mb-3">
-                <label htmlFor="password">
-                  Contraseña:
-                  <Field
-                    type="password"
-                    className="form-control"
-                    name="password"
-                    id="password"
-                    required
-                  />
-                  <ErrorMessage name="password">
-                    {(error) => (
-                      <div className="alert alert-danger">{error}</div>
-                    )}
-                  </ErrorMessage>
-                </label>
-              </div>
-              <div className="form-group mb-3">
-                <button type="submit" className="btn btn-primary">
-                  Login
-                </button>
-              </div>
-            </Form>
-          </Formik>
-        </div>
+      <div className="mx-3 col-lg-12 col-md-12 col-xs-12">
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
+        >
+          <Form className="mt-3 col-12">
+            <div className="form-group mb-3">
+              <label htmlFor="email">
+                Email:
+                <Field
+                  type="email"
+                  className="form-control"
+                  name="email"
+                  id="email"
+                  required
+                />
+                <ErrorMessage name="email">
+                  {(error) => <div className="alert alert-danger">{error}</div>}
+                </ErrorMessage>
+              </label>
+            </div>
+            <div className="form-group mb-3">
+              <label htmlFor="password">
+                Contraseña:
+                <Field
+                  type="password"
+                  className="form-control"
+                  name="password"
+                  id="password"
+                  required
+                />
+                <ErrorMessage name="password">
+                  {(error) => <div className="alert alert-danger">{error}</div>}
+                </ErrorMessage>
+              </label>
+            </div>
+            <div className="form-group mb-3">
+              <button type="submit" className="btn btn-primary">
+                Login
+              </button>
+            </div>
+          </Form>
+        </Formik>
       </div>
     </div>
   );
