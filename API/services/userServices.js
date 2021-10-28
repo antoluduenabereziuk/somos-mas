@@ -22,9 +22,13 @@ const login = async ({ email, password }) => {
     where: { email: email },
   });
     console.log("user: " + user);
-  const isMatch = user && (await comparePass(password, user.password));
+  const isMatch = user && (await desencrypt(password, user.password));
   if (!isMatch) {
+    // throw new error.AppError(
+    //   exceptions.exceptionType.users.invalidPassword,
+    //   "userService.login"
     return JSON.stringify({ok:false})
+    // );
   }
 
   return {user};
