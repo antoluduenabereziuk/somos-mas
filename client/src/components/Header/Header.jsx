@@ -1,3 +1,5 @@
+import React from "react";
+
 import logoONG from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
 
@@ -27,12 +29,12 @@ export const Header = () => {
             </Link>
           ))}
         </ul>
-      </nav>
 
-      <div className="buttons-container">
-        <button className="button login">Iniciar sesión</button>
-        <button className="button signup">Registrate</button>
-      </div>
+        <div className="buttons-container">
+          <button className="button login">Iniciar sesión</button>
+          <button className="button signup">Registrate</button>
+        </div>
+      </nav>
     </header>
   );
 };
