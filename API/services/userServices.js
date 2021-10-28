@@ -1,43 +1,6 @@
-const userModel = require("../models/Users");
-const encrytp = require("../auth/encrypt");
+const userModel = require("../models/User");
+const {desencrypt} = require("../auth/encrypt");
 
-const create = async ({ user_name, password, email }) => {
-  console.log("createUser - userName[" + user_name + "]");
-  //Check Duplicate UserName
-  const userExist = await userModel.findOne({
-    where: { user_name: user_name.toLowerCase() },
-  });
-  if (userExist) {
-    throw new error.AppError(exceptions.exceptionType.users.userExists);
-  }
-
-  //Check Duplicate Email
-  const emailExist = await userModel.findOne({
-    where: { email: email.toLowerCase() },
-  });
-  if (emailExist) {
-    throw new error.AppError(exceptions.exceptionType.users.emailExists);
-  }
-
-  const data = {
-    user_name: user_name.toLowerCase(),
-    password: encryptPassword(password),
-    email,
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  };
-  console.log("createUser - data[" + JSON.stringify(data) + "]");
-  try {
-    return await userModel.create(data);
-  } catch (e) {
-    const errorMessage = `Create User - Detail: ` + e.message;
-    console.error("createUser - user_name[" + user_name + "]");
-    throw new error.AppError(
-      exceptions.exceptionType.database.entity.canNotBeCreated,
-      errorMessage
-    );
-  }
-};
 
 const generateToken = (id_user, user_name) => {
   return jwt.sign(
@@ -53,20 +16,26 @@ const generateToken = (id_user, user_name) => {
   );
 };
 
-const login = async ({ email, password }) => {
-  console.log("login - email[" + email + "]" + " - password[" + password + "]");
-  const user = await userModel.findOne({
+const login = async ({ email, password}) => {
+//   console.log("login - email[" + email + "]" + " - password[" + password + "]");
+  const tovalPassword = password ;
+  const {id_user,firts_name,last_name,email,rol,password} = await userModel.findOne({
     where: { email: email },
   });
-  console.log("user: " + user);
-  const isMatch = user && (await comparePass(password, user.password));
+//   console.log("user: " + user);
+  const isMatch = user && (await desencrypt( tovalPassword , password);
   if (!isMatch) {
-    throw new error.AppError(
-      exceptions.exceptionType.users.invalidPassword,
-      "userService.login"
-    );
+      console.log("error")
+    // throw new error.AppError(
+    //   exceptions.exceptionType.users.invalidPassword,
+    //   "userService.login"
+    // );
   }
-  const token = generateToken(user.id_user, user.user_name);
+  const token = generateToken(id_user,firts_name,last_name,rol);
   console.log(token);
   return { token };
 };
+
+module.exports ={
+    login
+}
