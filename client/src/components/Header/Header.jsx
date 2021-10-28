@@ -6,10 +6,10 @@ import "./Header.scss";
 export const Header = () => {
   const itemsNav = [
     { title: "Inicio", route: "" },
-    { title: "Nosotros", route: "us" },
+    { title: "Nosotros", route: "about" },
     { title: "Novedades", route: "novelties" },
-    { title: "Testimonios", route: "testimonies" },
-    { title: "contacto", route: "contact" },
+    { title: "Testimonios", route: "testimonials" },
+    { title: "contacto", route: "contacts" },
     { title: "Contribuye", route: "contribute" },
   ];
 
@@ -29,7 +29,7 @@ export const Header = () => {
         </ul>
       </nav>
 
-      <div className="buttonsContainer">
+      <div className="buttons-container">
         <button className="button login">Iniciar sesión</button>
         <button className="button signup">Registrate</button>
       </div>
