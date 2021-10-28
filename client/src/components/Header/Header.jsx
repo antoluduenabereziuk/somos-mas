@@ -1,19 +1,17 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import logoONG from "../../assets/images/logo.png";
-import { Link } from "react-router-dom";
 
 import "./Header.scss";
 
 export const Header = () => {
-  const [ isOpen, setOpen ] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
-  const setNav = () => {
-    setOpen(!isOpen)
-  }
-
-  const show = isOpen ? "navbar show" : "navbar"
-
+  const handleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
+  const showNavbar = isOpen ? "show" : "";
 
   const itemsNav = [
     { title: "Inicio", route: "" },
@@ -26,12 +24,12 @@ export const Header = () => {
 
   return (
     <header>
-      <figure>
+      <figure className="logo">
         <img src={logoONG} alt="Logo SOMOS ONG" />
       </figure>
 
-      <nav className={show}>
-        <ul>
+      <nav className={`navbar ${showNavbar}`}>
+        <ul className="navbar-list">
           {itemsNav.map((item, index) => (
             <Link key={index} to={`/${item.route}`}>
               {item.title}
@@ -41,11 +39,17 @@ export const Header = () => {
 
         <div className="buttons-container">
           <button className="button login">Iniciar sesión</button>
-          <button className="button signup">Registrate</button>
+          <button className="button signup">Registrarse</button>
         </div>
+
+        <figure className="logo navbar-logo">
+          <img src={logoONG} alt="Logo SOMOS ONG" />
+        </figure>
       </nav>
 
-      <button onClick={setNav} className="hamburger">Abrir</button>
+      <button onClick={handleNavbar} className="hamburger">
+        X
+      </button>
     </header>
   );
 };
