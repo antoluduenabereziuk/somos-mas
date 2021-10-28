@@ -34,4 +34,16 @@ const User = [{
     }
 ];
 
-module.exports = User
+const getAll = ()=> {
+    const users= users.getAll(user=>user.id_user);
+    return users
+}
+
+const  findOne = ()=> {
+    return true;
+}
+module.exports = {
+    User, 
+    getAll,
+    findOne
+};

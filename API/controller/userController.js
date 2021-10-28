@@ -1,6 +1,9 @@
 const userServices = require('../services/userServices');
 
-  
+  const getAll= async(req,res)=>{
+    const users = await userServices.getAllservices()
+    res.status(200).json(users);
+  }
   const login = async (req, res) => {
     const data = req.body
     console.log("llega en el body "+JSON.stringify(data.email))
@@ -11,5 +14,6 @@ const userServices = require('../services/userServices');
 
   module.exports ={
       login,
+      getAll
   }
   

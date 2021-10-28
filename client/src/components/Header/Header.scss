@@ -4,12 +4,10 @@ header {
   position: relative;
   width: 100%;
   height: 6.2rem;
-  padding: $padding-sm $padding-xxl;
+  padding: $spacing-sm $spacing-xxl;
 
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
   font-size: 1.5rem;
 
   figure {
@@ -18,15 +16,25 @@ header {
     }
   }
 
-  nav {
-    margin-left: $margin-xxl;
+  .navbar {
+    position: fixed;
+    top: 0; right: -100%; bottom: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    z-index: 999;
     ul {
       display: flex;
+      flex-direction: column;
       align-items: center;
       list-style: none;
-
+      padding: 0;
       & > * {
-        margin-right: 4rem;
+        margin-bottom: 1rem;
         cursor: pointer;
         color: $color-ligthblue;
         font-weight: 500;
@@ -41,19 +49,22 @@ header {
     }
   }
 
-  .buttonsContainer {
+  .show {
+    right: 0;
+    transition: all .2s linear;
+  }
+
+  .buttons-container {
     position: relative;
-    width: 27rem;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    margin-left: auto;
 
     .button {
       display: block;
       width: 13rem;
       height: 100%;
-      padding: $padding-xs $padding-sm;
+      padding: $spacing-xs $spacing-sm;
       border: 1px solid $color-ligthblue;
       border-radius: 6px;
       font-size: 1.5rem;
@@ -61,6 +72,7 @@ header {
       line-height: 1.8rem;
       background-color: transparent;
       cursor: pointer;
+      margin-bottom: .5rem;
 
       &.login {
         color: $color-ligthblue;
@@ -73,3 +85,11 @@ header {
     }
   }
 }
+
+.hamburger {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 99999;
+}
+
