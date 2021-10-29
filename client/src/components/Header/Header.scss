@@ -17,11 +17,11 @@ header {
     }
   }
 
-  .hamburger {
+  .hamburger-react {
     display: block;
     position: fixed;
-    right: $spacing-md;
     z-index: 99999;
+    margin-left: auto;
   }
 }
 
@@ -70,7 +70,7 @@ header {
   }
 }
 
-.show {
+.show-navbar {
   right: 0;
   transition: all 0.2s linear;
 }
@@ -112,7 +112,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    .hamburger {
+
+    .hamburger-react {
       display: none;
     }
   }
@@ -139,10 +140,10 @@ header {
         margin-right: $spacing-lg;
       }
     }
+  }
 
-    &-logo {
-      display: none;
-    }
+  .logo.navbar-logo {
+    display: none;
   }
 
   .buttons-container {
@@ -152,6 +153,7 @@ header {
     justify-content: space-between;
     margin-left: auto;
     width: 27.2rem;
+    margin-top: 0;
 
     .button {
       &.login {

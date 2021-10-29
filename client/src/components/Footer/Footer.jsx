@@ -44,38 +44,25 @@ export const Footer = () => {
         </ul>
       </section>
       <div className="social-media">
-        <ul>
-          <li>
-            <a href="/">
-              <img
-                className="icon"
-                src={iconFacebook}
-                alt="Icono de Facebook"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="/">
-              <img
-                className="icon"
-                src={iconInstagram}
-                alt="Icono de Instagram"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="/">
-              <img className="icon" src={iconTwitter} alt="Icono de Twitter" />
-            </a>
-          </li>
-          <li>
-            <a href="/">
-              <img className="icon" src={iconYoutube} alt="Icono de Youtube" />
-            </a>
-          </li>
-        </ul>
-        <p>2021 by Alkemy. All Rights Reserved.</p>
+        <a href="/">
+          <img className="icon" src={iconFacebook} alt="Icono de Facebook" />
+        </a>
+
+        <a href="/">
+          <img className="icon" src={iconInstagram} alt="Icono de Instagram" />
+        </a>
+
+        <a href="/">
+          <img className="icon" src={iconTwitter} alt="Icono de Twitter" />
+        </a>
+
+        <a href="/">
+          <img className="icon" src={iconYoutube} alt="Icono de Youtube" />
+        </a>
       </div>
+      <p className="terms-and-condition">
+        2021 by Alkemy. All Rights Reserved.
+      </p>
     </footer>
   );
 };
