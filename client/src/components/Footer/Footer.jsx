@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-import logoONG from "../../assets/images/logo.png";
 // Icons
 import iconFacebook from "../../assets/icons/facebook.svg";
 import iconTwitter from "../../assets/icons/twitter.svg";
@@ -10,6 +9,17 @@ import iconInstagram from "../../assets/icons/instagram.svg";
 import "./Footer.scss";
 
 export const Footer = () => {
+  // GET Logo ONG
+  const logoONG = "/images/logo.png";
+
+  //! This function will request the image url from a database
+  // const getLogo = async () => {
+  //   const response = await fetch(DATABASE_URL + "/logo");
+  //   const blob = await response.blob();
+  //   const src = URL.createObjectURL(blob);
+  //   return src;
+  // };
+
   const itemsLeftFooter = [
     { title: "Noticias", route: "news" },
     { title: "Actividades", route: "activities" },
