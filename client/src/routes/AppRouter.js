@@ -16,10 +16,13 @@ import { Register } from "../pages/Register";
 import { User } from "../pages/User";
 import { NotFound } from "../pages/NotFound";
 
+// import { Alerts } from "../components/Alerts/Alerts";
+
 export const AppRouter = () => {
   return (
     <BrowserRouter>
       <Header />
+
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />

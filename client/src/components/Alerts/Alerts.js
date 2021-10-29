@@ -1,32 +1,26 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Swal from "sweetalert2";
-import 'bootstrap/dist/css/bootstrap.min.css'
 
+import "bootstrap/dist/css/bootstrap.min.css";
 
-export default class AlertaConfirmacion extends Component {
+export const AlertsNew = ({ title, buttonName, footer, type, text }) => {
+  const [confirmation, setConfirmation] = useState(false);
 
-    constructor() {
-        super();
-        this.HandleClick = this.HandleClick.bind(this);
-    }
+  const handleClick = () => {
+    Swal.fire({
+      buttonName: buttonName,
+      title: title,
+      footer: footer,
+      type: type,
+      text: text,
+    });
+  };
 
-    HandleClick() {
-        Swal.fire({
-            title: this.props.title,
-            footer: this.props.footer,
-            type: this.props.type,
-            text: this.props.text,
-         
-        });
-    }
-
-    render() {
-        return (
-            <div>
-                <button class="btn btn-primary" onClick={this.HandleClick}>
-                    Alerta
-                </button>
-            </div>
-        );
-    }
-}
+  return (
+    <div>
+      <button class="btn btn-primary" onClick={handleClick}>
+        {buttonName}
+      </button>
+    </div>
+  );
+};
