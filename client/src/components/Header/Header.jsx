@@ -1,38 +1,53 @@
-import logoONG from "../../assets/images/logo.png";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+
+import { Squash as Hamburger } from "hamburger-react";
+
+import logoONG from "../../assets/images/logo.png";
 
 import "./Header.scss";
 
 export const Header = () => {
+  const [isOpen, setOpen] = useState(false);
+
+  const showNavbar = isOpen ? "show-navbar" : "";
+  console.log(showNavbar);
+
   const itemsNav = [
     { title: "Inicio", route: "" },
-    { title: "Nosotros", route: "us" },
+    { title: "Nosotros", route: "about" },
     { title: "Novedades", route: "novelties" },
-    { title: "Testimonios", route: "testimonies" },
-    { title: "contacto", route: "contact" },
+    { title: "Testimonios", route: "testimonials" },
+    { title: "contacto", route: "contacts" },
     { title: "Contribuye", route: "contribute" },
   ];
 
   return (
     <header>
-      <figure>
+      <figure className="logo">
         <img src={logoONG} alt="Logo SOMOS ONG" />
       </figure>
 
-      <nav>
-        <ul>
+      <nav className={`navbar ${showNavbar}`}>
+        <figure className="logo navbar-logo">
+          <img src={logoONG} alt="Logo SOMOS ONG" />
+        </figure>
+
+        <ul className="navbar-list">
           {itemsNav.map((item, index) => (
             <Link key={index} to={`/${item.route}`}>
               {item.title}
             </Link>
           ))}
         </ul>
+
+        <div className="buttons-container">
+          <button className="button login">Iniciar sesión</button>
+          <button className="button signup">Registrarse</button>
+        </div>
       </nav>
 
-      <div className="buttonsContainer">
-        <button className="button login">Iniciar sesión</button>
-        <button className="button signup">Registrate</button>
-      </div>
+      <Hamburger toggled={isOpen} toggle={() => setOpen(!isOpen)} />
     </header>
   );
 };

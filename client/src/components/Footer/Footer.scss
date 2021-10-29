@@ -1,66 +1,66 @@
 @import "../../assets/scss/vars";
 
 footer {
+  margin-top: 5rem; //! test
+
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   width: 100%;
-  height: 30rem;
-  border-top: 2px solid #000000;
-  font-size: 1.5rem;
+  border-top: 2px solid $color-black;
+  font-size: $font-size-default;
   font-weight: 500;
 }
 
-section {
+.footer-nav {
   position: relative;
-  width: 90%;
+  width: 100%;
   height: 12rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 12rem 1fr;
-  grid-template-areas:
-    "list-1 logo list-2"
-    "social social social";
-  align-items: center;
-  justify-items: center;
+  place-items: center center;
 
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid $color-black;
 
   ul {
-    display: flex;
-    list-style: none;
     width: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
     font-weight: 700;
     line-height: 2.4rem;
+    list-style: none;
 
-    li {
-      a {
-        color: #000000;
-        text-decoration: none;
+    // list items
+    & > * {
+      color: $color-black;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: capitalize;
+      cursor: pointer;
+      transition: all 0.1s;
+
+      &:hover {
+        color: $color-ligthblue;
       }
     }
   }
 
   ul.list-left {
-    grid-area: list-1;
-    margin: 0;
-
-    li {
-    }
+    grid-column: 1 / 2;
   }
 
   ul.list-right {
-    grid-area: list-2;
-
-    li {
-    }
+    grid-column: 3 / 4;
   }
 
   figure {
-    grid-area: logo;
+    grid-column: 2 / 3;
+    margin: 0;
 
     img {
       width: 11rem;
@@ -68,22 +68,25 @@ section {
   }
 }
 
-.socialMedia {
+.social-media {
   width: 100%;
-  height: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  line-height: 3.2rem;
+  padding: $spacing-xl 0;
 
-  p {
-    color: rgba(#000000, 0.8);
-  }
+  a {
+    display: inline-block;
+    font-size: $font-size-default;
+    padding: 0;
 
-  ul {
-    display: flex;
-    list-style: none;
-    font-size: 1.5rem;
+    .icon {
+      width: 3.2rem;
+    }
   }
+}
+
+.terms-and-condition {
+  color: rgba($color-black, 0.5);
+  font-size: $spacing-sm;
 }

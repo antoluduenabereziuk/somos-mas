@@ -2,6 +2,8 @@ import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
+import "./styles/Login.scss";
+
 const Login = () => {
   const validationSchema = Yup.object({
     email: Yup.string()
@@ -24,53 +26,43 @@ const Login = () => {
   };
 
   return (
-    <div className="form-container">
-      <h1 className="mt-2">Formulario de Login</h1>
-      <div className="mx-3 col-lg-12 col-md-12 col-xs-12">
-        <Formik
-          initialValues={initialValues}
-          validationSchema={validationSchema}
-          onSubmit={handleSubmit}
-        >
-          <Form className="mt-3 col-12">
-            <div className="form-group mb-3">
-              <label htmlFor="email">
-                Email:
-                <Field
-                  type="email"
-                  className="form-control"
-                  name="email"
-                  id="email"
-                  required
-                />
-                <ErrorMessage name="email">
-                  {(error) => <div className="alert alert-danger">{error}</div>}
-                </ErrorMessage>
-              </label>
-            </div>
-            <div className="form-group mb-3">
-              <label htmlFor="password">
-                Contraseña:
-                <Field
-                  type="password"
-                  className="form-control"
-                  name="password"
-                  id="password"
-                  required
-                />
-                <ErrorMessage name="password">
-                  {(error) => <div className="alert alert-danger">{error}</div>}
-                </ErrorMessage>
-              </label>
-            </div>
-            <div className="form-group mb-3">
-              <button type="submit" className="btn btn-primary">
-                Login
-              </button>
-            </div>
-          </Form>
-        </Formik>
-      </div>
+    <div className="container">
+      <h1>Registrate</h1>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={handleSubmit}
+      >
+        <Form className="form">
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <Field
+              className="input email"
+              type="email"
+              name="email"
+              id="email"
+              required
+            />
+            <ErrorMessage name="email">
+              {(error) => <div className="alert alert-danger">{error}</div>}
+            </ErrorMessage>
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Contraseña</label>
+            <Field
+              className="input password"
+              type="password"
+              name="password"
+              id="password"
+              required
+            />
+            <ErrorMessage name="password">
+              {(error) => <div className="alert alert-danger">{error}</div>}
+            </ErrorMessage>
+          </div>
+          <button type="submit">Login</button>
+        </Form>
+      </Formik>
     </div>
   );
 };

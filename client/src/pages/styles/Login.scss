@@ -1,0 +1,29 @@
+@import "../../assets/scss/vars";
+
+.container {
+  font-family: $font-primary;
+  position: relative;
+  width: 100%;
+  font-size: 1.6rem;
+
+  h1 {
+    text-align: center;
+  }
+}
+
+.form {
+  width: 100%;
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 32rem;
+    max-width: 64rem;
+    margin: 0 auto;
+
+    border: 1px solid red;
+  }
+}
