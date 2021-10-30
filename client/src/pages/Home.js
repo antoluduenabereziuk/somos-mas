@@ -26,24 +26,6 @@ export const Home = () => {
         title: "cargado...",
         img_url: "url"
       }
-    ],
-    testimonials: [
-      {
-        title: "cargando...",
-        img_url: "url"
-      },
-      {
-        title: "cargando...",
-        img_url: "url"
-      },
-      {
-        title: "cargando...",
-        img_url: "url"
-      },
-      {
-        title: "cargado...",
-        img_url: "url"
-      }
     ]
   })
 
@@ -78,28 +60,6 @@ export const Home = () => {
             img_url: "https://picsum.photos/id/238/300",
             alt_text: "Hola mundo"
           }
-        ],
-        testimonials: [
-          {
-            title: "Hola mundo",
-            img_url: "https://picsum.photos/id/223/300",
-            alt_text: "Hola mundo"
-          },
-          {
-            title: "Meme",
-            img_url: "https://picsum.photos/id/233/300",
-            alt_text: "Hola mundo"
-          },
-          {
-            title: "Somos Más",
-            img_url: "https://picsum.photos/id/221/300",
-            alt_text: "Hola mundo"
-          },
-          {
-            title: "Gente de todos",
-            img_url: "https://picsum.photos/id/290/300",
-            alt_text: "Hola mundo"
-          }
         ]
       })
     }, 5000)
@@ -112,19 +72,13 @@ export const Home = () => {
         <div>
           <Slider /> 
           <h1>{ title }</h1>
-          {/* <LastNovelties novelties={ novelties } />
-          <LastTestimonials testimonials={ testimonials } />   */}
-          <Prueba title="Últimas Novedades" data={ novelties }/>
-          <Prueba title="Testimonios" data={ testimonials }/>
+          <LastNovelties novelties={ novelties } />
         </div>
         :
         <div>
           <Slider /> 
           <h1>{ title }</h1>
-          {/* <LastNovelties novelties={ novelties } /> */}
-          <Prueba title="Últimas Novedades" data={ novelties }/>
-          <Prueba title="Testimonios" data={ testimonials }/>          
-          {/* <LastTestimonials testimonials={ testimonials } />   */}
+          <LastNovelties novelties={ novelties } />
         </div>
         }
     </div>

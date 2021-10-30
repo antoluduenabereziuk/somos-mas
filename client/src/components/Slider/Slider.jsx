@@ -91,5 +91,5 @@ const Slider = React.memo(() => {
       </button>
     </div>
   );
-});
+})
 export default Slider;

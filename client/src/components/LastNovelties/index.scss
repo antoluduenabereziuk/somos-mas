@@ -1,7 +1,17 @@
+h1 {
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 2rem;
+    text-align: center;
+}
+
 .noveltie-conteiner {
     padding: 1rem 5%;
     display: flex;
-    // flex-wrap: wrap;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 1.5rem;
     &-item {
@@ -43,5 +53,49 @@
                 color: #d3d3d3;
             }
         }
+    }
+}
+
+.novelties-links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 4rem;
+    margin: 20px 0;
+    &-primary {
+        width: 100%;
+        text-align: center;
+        position: relative;
+    }
+    &-primary > button{
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 11px 30px;
+        background: #FFFFFF;
+        border: 1px solid #18A0FB;
+        box-sizing: border-box;
+        border-radius: 6px;
+        color: #18A0FB;;
+    }
+    &-primary > button:hover {
+        background-color: whitesmoke;
+    }
+    &-primary > button:active {
+        background-color: lightcyan;
+    }
+    &-secondary {
+        position: absolute;
+        top: 30%;
+        left: 20%;
+    }
+    &-secondary > button{
+        font-size: 1rem;
+        margin: 0 10px;
+        border: none;
+        background-color: white;
+        cursor: pointer;
+    }
+    &-secondary > button:active {
+        color: #18A0FB;
     }
 }

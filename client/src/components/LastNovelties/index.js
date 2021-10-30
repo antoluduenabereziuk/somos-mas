@@ -27,11 +27,16 @@ export const LastNovelties = React.memo(props => {
                 }
             </div>
             <div className="novelties-links">
-                <div>
-                    <Link>Testimonios</Link>
-                    <Link>Novedades</Link> 
+                
+                <div className="novelties-links-primary">
+                    <div className="novelties-links-secondary">
+                        <button>Testimonios</button>
+                        <button>Novedades</button>
+                        {/* <Link>Testimonios</Link>
+                        <Link>Novedades</Link>  */}
+                    </div>
+                    <button >Ver Todas</button>
                 </div>
-                <button>Ver Todas</button>
             </div>
             
         </div>
