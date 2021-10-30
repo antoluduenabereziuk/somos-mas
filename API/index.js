@@ -18,13 +18,13 @@ app.use("/", authRoute);
 
 app.listen(PORT, (req, res) => {
   console.log(`server running on port: ${PORT}`);
-  try {
-    sequelize
-      .authenticate()
-      .then(console.log("Connection has been established successfully."));
-  } catch (error) {
-    console.error("Unable to connect to the database:", error);
-  }
+  // try {
+  //   sequelize
+  //     .authenticate()
+  //     .then(console.log("Connection has been established successfully."));
+  // } catch (error) {
+  //   console.error("Unable to connect to the database:", error);
+  // }
 });
 
 module.exports = app;
