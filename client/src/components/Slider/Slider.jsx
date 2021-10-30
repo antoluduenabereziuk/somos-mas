@@ -1,6 +1,6 @@
 import React from "react";
 import "./Slider.scss";
-const Slider = () => {
+const Slider = React.memo(() => {
   const carouselData = [
     {
       imgUrl:
@@ -91,6 +91,5 @@ const Slider = () => {
       </button>
     </div>
   );
-};
-
+});
 export default Slider;
