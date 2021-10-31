@@ -1,3 +1,5 @@
+import React from "react";
+
 import { Link } from "react-router-dom";
 
 // Icons
@@ -35,17 +37,17 @@ export const Footer = () => {
   return (
     <footer>
       <section className="footer-nav">
-        <ul className="list-left">
+        <ul className="footer-list footer-list--left">
           {itemsLeftFooter.map((item, index) => (
             <Link key={index} to={`/${item.route}`}>
               {item.title}
             </Link>
           ))}
         </ul>
-        <figure>
+        <figure className="footer-logo">
           <img src={logoONG} alt="Logo SOMOS ONG" />
         </figure>
-        <ul className="list-right">
+        <ul className="footer-list footer-list--right">
           {itemsRightFooter.map((item, index) => (
             <Link key={index} to={`/${item.route}`}>
               {item.title}

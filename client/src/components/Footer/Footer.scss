@@ -1,8 +1,6 @@
 @import "../../assets/scss/vars";
 
 footer {
-  margin-top: 5rem; //! test
-
   position: relative;
   display: flex;
   flex-direction: column;
@@ -15,15 +13,16 @@ footer {
 
 .footer-nav {
   position: relative;
-  width: 100%;
+  width: 90%;
   height: 12rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   place-items: center center;
-
+  margin: 0 auto;
   border-bottom: 1px solid $color-black;
+  font-size: $font-size-small;
 
-  ul {
+  .footer-list {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -48,22 +47,22 @@ footer {
         color: $color-ligthblue;
       }
     }
+
+    &--left {
+      grid-column: 1 / 2;
+    }
+
+    &--right {
+      grid-column: 3 / 4;
+    }
   }
 
-  ul.list-left {
-    grid-column: 1 / 2;
-  }
-
-  ul.list-right {
-    grid-column: 3 / 4;
-  }
-
-  figure {
+  .footer-logo {
     grid-column: 2 / 3;
     margin: 0;
 
     img {
-      width: 11rem;
+      width: 15rem;
     }
   }
 }
@@ -89,4 +88,19 @@ footer {
 .terms-and-condition {
   color: rgba($color-black, 0.5);
   font-size: $spacing-sm;
+}
+
+@media (min-width: $breakpoint-sm) {
+  .footer-nav {
+    font-size: $font-size-default;
+  }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .footer-nav {
+    .footer-list {
+      display: flex;
+      flex-direction: row;
+    }
+  }
 }

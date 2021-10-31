@@ -1,21 +1,14 @@
 import React from "react";
 
-import { Title } from "../typography/Title";
-
-import { Noveltie } from "./Noveltie";
+import { Title } from "../utils/typography/Title";
 
 import "./LastNovelties.scss";
 
-export function LastNovelties() {
+export function LastNovelties({ children }) {
   return (
     <>
       <Title value="Titulo de bienvenida" />
-      <section className="Last-novelties">
-        <Noveltie />
-        <Noveltie />
-        <Noveltie />
-        <Noveltie />
-      </section>
+      <section className="Last-novelties">{children}</section>
     </>
   );
 }

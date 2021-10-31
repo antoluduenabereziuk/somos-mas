@@ -1,6 +1,9 @@
+@import "../../assets/scss/vars";
+
 .Last-novelties {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin: $spacing-md auto;
 }

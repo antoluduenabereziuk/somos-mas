@@ -90,7 +90,7 @@ header {
     height: 100%;
     padding: $spacing-xs $spacing-sm;
     border: 1px solid $color-ligthblue;
-    border-radius: 6px;
+    border-radius: $border-radius-sm;
     font-size: $font-size-default;
     font-weight: 500;
     line-height: 1.8rem;
