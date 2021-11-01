@@ -55,8 +55,8 @@ export const Header = () => {
         </ul>
 
         <div className="buttons-container">
-          <Link to="/auth/login" className="button login">Iniciar sesión</Link>
-          <Link  to="/auth/register"  className="button signup">Registrarse</Link>
+          <Link to="/auth/login" className="btn primary">Iniciar sesión</Link>
+          <Link  to="/auth/register"  className="btn primary">Registrarse</Link>
         </div>
       </nav>
 

@@ -1,9 +1,9 @@
 import React from "react";
 
-import Slider from "../components/Slider/Slider";
-import { LastNovelties } from "../components/LastNovelties/LastNovelties";
-import { Noveltie } from "../components/LastNovelties/Noveltie/Noveltie";
-import { Button } from "../components/utils/buttons/Button";
+import Slider from "../../components/Slider/Slider";
+import { LastNovelties } from "../../components/LastNovelties/LastNovelties";
+import { Noveltie } from "../../components/LastNovelties/Noveltie/Noveltie";
+import { Button } from "../../components/utils/buttons/Button";
 
 export const Home = () => {
   const novelties = [
@@ -27,7 +27,7 @@ export const Home = () => {
 
   return (
     <>
-      <div className="container">
+      <div>
         <Slider />
 
         <LastNovelties>
