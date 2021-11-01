@@ -11,33 +11,29 @@ import { Novelties } from "../pages/Novelties";
 import { Testimonials } from "../pages/Testimonials";
 import { Contacts } from "../pages/Contacts";
 import { Contribute } from "../pages/Contribute";
-import { Login } from "../pages/Login.jsx";
-import { Register } from "../pages/Register";
 import { User } from "../pages/User";
 import { NotFound } from "../pages/NotFound";
+import { AuthRouter } from "./AuthRouter";
+import { MainRouter } from "./MainRouter";
 
 // import { Alerts } from "../components/Alerts/Alerts";
 
 export const AppRouter = () => {
   return (
     <BrowserRouter>
-      <Header />
-
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/activities" component={Activities} />
-        <Route exact path="/news" component={News} />
-        <Route exact path="/novelties" component={Novelties} />
-        <Route exact path="/testimonials" component={Testimonials} />
-        <Route exact path="/contacts" component={Contacts} />
-        <Route exact path="/contribute" component={Contribute} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/user" component={User} />
-        <Route path="*" component={NotFound} />
+
+        <Route
+          path="/auth"
+          component={AuthRouter}
+        />
+
+        <Route 
+          path="/"
+          component={MainRouter}
+        />
+
       </Switch>
-      <Footer />
     </BrowserRouter>
   );
 };
