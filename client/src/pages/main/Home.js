@@ -38,8 +38,8 @@ export const Home = () => {
               img_url={noveltie.img_url}
             />
           ))}
+          <Button title="Ver más" className="btn primary"/>
         </LastNovelties>
-        <Button title="Ver más" className="btn primary"/>
       </div>
     </>
   );
