@@ -67,7 +67,7 @@ export const Login = () => {
               ¿Olvidáste tu contraseña?
             </Link>
             <div className="input-box">
-              <button type="submit" className="btn  primary">
+              <button type="submit" className="btn primary center">
                 Login
               </button>
             </div>

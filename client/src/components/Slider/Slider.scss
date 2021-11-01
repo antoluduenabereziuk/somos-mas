@@ -1,13 +1,4 @@
-.wrapper {
-  margin: 0 10rem;
-  .carousel {
-    img {
-      max-height: 70vh !important;
-      width: auto;
-      aspect-ratio: 16 / 9;
-    }
-  }
-}
-.sliderText {
-  font-size: 2rem;
+.slider {
+  max-width: 1360px;
+  margin: 0 auto;
 }

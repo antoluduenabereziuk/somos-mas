@@ -23,6 +23,7 @@ const Slider = React.memo(() => {
   ];
   return (
     <Carousel
+      className="slider"
       useKeyboardArrows={true}
       renderThumbs={() => false}
       showStatus={false}

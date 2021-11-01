@@ -29,7 +29,7 @@ export const Home = () => {
     <>
       <Slider />
 
-      <section>
+      <section className="Novelties-container">
         <LastNovelties>
           {novelties.map((noveltie, index) => (
             <Noveltie
@@ -39,8 +39,8 @@ export const Home = () => {
             />
           ))}
         </LastNovelties>
+        <Button className="btn primary center" title="Ver más" />
       </section>
-      <Button className="btn primary center" title="Ver más" />
     </>
   );
 };
