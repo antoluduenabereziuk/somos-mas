@@ -9,36 +9,38 @@ export const Home = () => {
   const novelties = [
     {
       title: "Novedad 1",
-      img_url: "https://picsum.photos/id/237/300",
+      img_url: "https://picsum.photos/400/300",
     },
     {
       title: "Novedad 2",
-      img_url: "https://picsum.photos/id/237/300",
+      img_url: "https://picsum.photos/400/300",
     },
     {
       title: "Novedad 3",
-      img_url: "https://picsum.photos/id/237/300",
+      img_url: "https://picsum.photos/400/300",
     },
     {
       title: "Novedad 4",
-      img_url: "https://picsum.photos/id/237/300",
+      img_url: "https://picsum.photos/400/300",
     },
   ];
 
   return (
     <>
-      <Slider />
+      <div className="container">
+        <Slider />
 
-      <LastNovelties>
-        {novelties.map((noveltie, index) => (
-          <Noveltie
-            key={index}
-            title={noveltie.title}
-            img_url={noveltie.img_url}
-          />
-        ))}
-      </LastNovelties>
-      <Button title="Ver más" />
+        <LastNovelties>
+          {novelties.map((noveltie, index) => (
+            <Noveltie
+              key={index}
+              title={noveltie.title}
+              img_url={noveltie.img_url}
+            />
+          ))}
+        </LastNovelties>
+        <Button title="Ver más" />
+      </div>
     </>
   );
 };
