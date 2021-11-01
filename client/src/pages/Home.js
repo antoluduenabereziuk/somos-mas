@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Slider from "../components/Slider/Slider";
 import { LastNovelties } from "../components/LastNovelties/LastNovelties";

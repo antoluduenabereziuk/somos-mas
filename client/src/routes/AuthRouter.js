@@ -1,5 +1,7 @@
 import React from 'react';
-import {Switch, Route, Redirect } from "react-router-dom";import { Login } from '../pages/Login';
+import {Switch, Route } from "react-router-dom";
+import { Login } from '../pages/Login';
+import { Register } from '../pages/Register';
 ;
 
 export const AuthRouter = () => {
@@ -8,18 +10,16 @@ export const AuthRouter = () => {
             
             <Route 
                 exact
-                to="/auth/login"
+                path="/auth/login"
                 component={Login}
             />
 
             <Route 
                 exact
-                to="/auth/register"
+                path="/auth/register"
+                component={Register}
             />
 
-            <Redirect 
-                to="/auth/login"
-            />
         </Switch>
     )
 }
