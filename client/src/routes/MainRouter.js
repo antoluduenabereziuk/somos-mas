@@ -15,30 +15,21 @@ import { User } from "../pages/main/User";
 
 export const MainRouter = () => {
   return (
-    <div>
+    <>
       <Header />
       <Switch>
         <Route exact path="/" component={Home} />
-
         <Route exact path="/about" component={About} />
-
         <Route exact path="/activities" component={Activities} />
-
         <Route exact path="/news" component={News} />
-
         <Route exact path="/novelties" component={Novelties} />
-
         <Route exact path="/testimonials" component={Testimonials} />
-
         <Route exact path="/contacts" component={Contacts} />
-
         <Route exact path="/contribute" component={Contribute} />
-
         <Route exact path="/user" component={User} />
-
         <Route path="*" component={NotFound} />
       </Switch>
       <Footer />
-    </div>
+    </>
   );
 };

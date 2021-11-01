@@ -29,16 +29,18 @@ export const Home = () => {
     <>
       <Slider />
 
-      <LastNovelties>
-        {novelties.map((noveltie, index) => (
-          <Noveltie
-            key={index}
-            title={noveltie.title}
-            img_url={noveltie.img_url}
-          />
-        ))}
-      </LastNovelties>
-      <Button title="Ver más" />
+      <section>
+        <LastNovelties>
+          {novelties.map((noveltie, index) => (
+            <Noveltie
+              key={index}
+              title={noveltie.title}
+              img_url={noveltie.img_url}
+            />
+          ))}
+        </LastNovelties>
+      </section>
+      <Button className="btn primary center" title="Ver más" />
     </>
   );
 };
