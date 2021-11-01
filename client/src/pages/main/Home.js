@@ -39,7 +39,7 @@ export const Home = () => {
             />
           ))}
         </LastNovelties>
-        <Button title="Ver más" />
+        <Button title="Ver más" className="btn primary"/>
       </div>
     </>
   );
