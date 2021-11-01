@@ -2,16 +2,16 @@ import React from "react";
 import { Switch, Route } from "react-router";
 import { Footer } from "../components/Footer/Footer";
 import { Header } from "../components/Header/Header";
-import { About } from "../pages/About";
-import { Activities } from "../pages/Activities";
-import { Contacts } from "../pages/Contacts";
-import { Contribute } from "../pages/Contribute";
-import { Home } from "../pages/Home";
-import { News } from "../pages/News";
-import { NotFound } from "../pages/NotFound";
-import { Novelties } from "../pages/Novelties";
-import { Testimonials } from "../pages/Testimonials";
-import { User } from "../pages/User";
+import { About } from "../pages/main/About";
+import { Activities } from "../pages/main/Activities";
+import { Contacts } from "../pages/main/Contacts";
+import { Contribute } from "../pages/main/Contribute";
+import { Home } from "../pages/main/Home";
+import { News } from "../pages/main/News";
+import { NotFound } from "../pages/main/NotFound";
+import { Novelties } from "../pages/main/Novelties";
+import { Testimonials } from "../pages/main/Testimonials";
+import { User } from "../pages/main/User";
 
 export const MainRouter = () => {
   return (
