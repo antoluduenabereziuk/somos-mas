@@ -20,33 +20,17 @@ import "./FormHome.scss";
 
 export const FormHome = () => {
 
-  const [image, setImage] = useState(null);
-    const [data, setData]= useState({
-          welcomeMessage: "",
-          image: "",
-          description: "",
-        }
-        );
+  const [image, setImage] = useState("");
+    
 
-    const handleSubmit = (values) => {
-        console.log(values);
-        // console.log({ 
-        //     fileName: values.file.name, 
-        //     type: values.file.type,
-        //     size: `${values.file.size} bytes`
-        //   });
-    //     const {image} = values
-    //   setData({
-    //     ...data,
-    //         image:image
-    //   })
-    //   console.log(data);
+    const handleSubmit = (file) => {
+        
     };
 
   const onImageChange = (event) => {
     if (event.target.files && event.target.files[0]) {
       setImage(`${URL.createObjectURL(event.target.files[0])}`);
-        console.log(event.target.files);
+      console.log(event.target.files);
     }
     
   };
@@ -68,14 +52,14 @@ export const FormHome = () => {
             <Form className="wrapper">
               <div className="one">            
                   <input
-                    // value={image}
+                    id="file"
                     name="file"
                     type="file"
                     onChange={onImageChange}
                     className="filetype"
                   />
                   <div className="image-preview">
-                    <img src={image} alt="preview image"  class="image-preview__image"/>
+                    <img src={image} alt="preview image"  className="image-preview__image"/>
                   </div>
                 <div className="my-3">
                   <button type="submit" className="btn btn-primary">
