@@ -4,57 +4,58 @@ import * as Yup from "yup";
 import logo from "../../assets/images/logo.png";
 import "./FormHome.scss";
 
-// const validationSchema = Yup.object({
-//   welcomeMessage: Yup.string()
-//     .required("Required")
-//     .min(20, "Mínimo 20 caracteres"),
-//   image: Yup.string().required("Required"),
-//   description: Yup.string().required("Required").min(6, "Mínimo 6 caracteres"),
-// });
-
-// const initialValues = {
-//   welcomeMessage: "",
-//   image: "",
-//   description: "",
-// };
 
 export const FormHome = () => {
-
+  
   const [image, setImage] = useState("");
-    
+  
 
-    const handleSubmit = (file) => {
-        
-    };
+
+  const handleOnSubmit = ({image}) => {
+    ///for access tu values use valuesForm object: example valuesForm.name
+    console.log(JSON.stringify({image}));
+    // setMessage("Su mensaje fue recepcionado a la brevedad se contestara");
+    console.log({image})
+  };
 
   const onImageChange = (event) => {
     if (event.target.files && event.target.files[0]) {
-      setImage(`${URL.createObjectURL(event.target.files[0])}`);
-      console.log(event.target.files);
+      setImage(URL.createObjectURL(event.target.files[0]));
+      console.log(event.target.files[0]);
     }
     
   };
-
-//   useEffect(() => {
-//       console.log(image);
-//   }, [image])
-
   return (
     <div className="container text-center p-3">
       <img src={logo} alt="Somos Mas Logo" />
       <div className="row">
         <div className="mx-auto col-lg-12 col-md-12 col-xs-12">
           <Formik
-          // initialValues={initialValues}
+          initialValues={{
+            lastModified:"",
+            name:"", 
+            size: "",
+            type:""
+          }}
           // validationSchema={validationSchema}
-          onSubmit={handleSubmit}
+          onSubmit={handleOnSubmit}
           >
-            <Form className="wrapper">
+            {({
+          values,
+          handleSubmit,
+          handleChange,
+          handleBlur,
+          errors,
+          touched,
+        }) => (
+            <Form className="wrapper" onSubmit={handleOnSubmit}>
               <div className="one">            
                   <input
-                    id="file"
+                    id="image"
                     name="file"
+                    accept=".png"
                     type="file"
+                    value={values.image}
                     onChange={onImageChange}
                     className="filetype"
                   />
@@ -67,29 +68,8 @@ export const FormHome = () => {
                   </button>
                 </div>
               </div>
-              {/* <div className="two">
-                <label htmlFor="text-area">
-                  Ingrese El Texto De Bienvenida
-                  <Field
-                    type="textarea"
-                    className="form-control"
-                    name="welcomeMessage"
-                    id="welcomeMessage"
-                    required
-                  />
-                  <ErrorMessage name="file">
-                    {(error) => (
-                      <div className="alert alert-danger">{error}</div>
-                    )}
-                  </ErrorMessage>
-                </label>
-                <div className="my-3">
-                  <button type="submit" className="btn btn-primary">
-                    Subir Imagen
-                  </button>
-                </div>
-              </div> */}
             </Form>
+        )}
           </Formik>
         </div>
       </div>
